@@ -1,0 +1,13 @@
+# The google components are all located with aria-label, so 
+# we'll override the default behaviour from AutoStep.Web (which searches by text) as needed.
+Component: button
+
+  inherits: button
+
+  locateNamed(name): select('input[type=submit]') -> withAttribute('aria-label', name)
+
+Component: field
+
+  inherits: field
+
+  locateNamed(name): select('input[type=text]') -> withAttribute('aria-label', name)
